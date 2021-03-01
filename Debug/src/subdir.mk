@@ -6,17 +6,17 @@
 CPP_SRCS += \
 ../src/Dragon.cpp \
 ../src/DragonTrainer.cpp \
-../src/dragonExercise.cpp 
+../src/main.cpp 
 
 OBJS += \
 ./src/Dragon.o \
 ./src/DragonTrainer.o \
-./src/dragonExercise.o 
+./src/main.o 
 
 CPP_DEPS += \
 ./src/Dragon.d \
 ./src/DragonTrainer.d \
-./src/dragonExercise.d 
+./src/main.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

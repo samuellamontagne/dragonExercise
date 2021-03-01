@@ -1,3 +1,10 @@
+/*
+ * Dragon.h
+ *
+ *  Created on: Mar. 1, 2021
+ *      Author: samuel
+ */
+
 #ifndef DRAGON_H_
 #define DRAGON_H_
 
@@ -7,7 +14,7 @@ using namespace std;
 
 class Dragon {
 public:
-	Dragon(string name = "None", double weight = 0.0);
+	Dragon(string nameIn = "None", double weightIn = 0.0);
 	virtual ~Dragon();
 	Dragon(const Dragon &other);
 	string getName();

@@ -19,7 +19,13 @@ int main() {
   cout << "Dragon's Name: " << myTrainer.getMyDragonsName() << endl;
   cout << "Dragon's Name (from heap): " << myTrainerHeap->getMyDragonsName() << endl;
 
-  
+  DragonTrainer myCopiedTrainer(myTrainer);
+
+  cout << "Copied trainer dragon's name: " << myCopiedTrainer.getMyDragonsName() << endl;
+
+  myCopiedTrainer = *myTrainerHeap;
+
+  cout << "Assigned operator dragon's name: " << myCopiedTrainer.getMyDragonsName() << endl;
  
   return 0;
 }
