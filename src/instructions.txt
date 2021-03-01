@@ -1,0 +1,47 @@
+Mini Exercise:  Objects 
+We're using pointers like it's the dark ages.
+0.01) start a new project - we're going to re-use this code later.
+0.1) Make a class DragonTrainer who may have a pet Dragon.
+    DragonTrainer has a (possibly NULL) pointer to a dragon.
+        (you may be tempted to allow multiple dragons per trainer,
+            but DON'T.  You'll thank me.)
+        Has a method like getMyDragonsName() 
+            -follow the dragon pointer
+            -read the dragon's name
+            -return that
+0.2) make a class Dragon.
+    Not too fancy, this is a SHORT exercise
+    some data: maybe a name (public or get/set), weight in tons (private)
+1) Instantiate a DragonTrainer and a Dragon, 
+    assign the Dragon to a DragonTrainer
+    ask the trainer his dragon's name
+2) Make another DragonTrainer on the heap
+    give him a dragon (also from the heap)
+    ask him his dragon's name
+3)  Make a destructor for your dragontrainer.
+    note: you don't need one for your dragon.  Why?
+    Your destructor should clean up the memory it needs to,
+        and also output something so you know it's running
+    Test it.
+4) Save your work.
+SECOND EXERCISE:
+    1) add a copy constructor and a copy assignment operator,
+    so that when you copy or assign a trainer, the new trainer automatically
+        has a new (copied) dragon that it points to
+            (watch out for null pointers)
+    
+    2) For the assignment operator, make sure you release the old dragon 
+        (if there  is one) before you point to the new dragon
+    3) test your work
+    4) save it
+THIRD EXERCISE:
+    Add a move assignment operator and a move constructor
+        a) just have them print so you can tell when they're called
+        b) implement move semantics:  the move assignment should not copy the 
+            dragon data.  Just assign the dragon pointer, 
+            then null (don't delete!) the pointer in the source trainer
+        in order to call the move assignment or move constructor, you can:
+        1) form an expression
+         -- won't work b/c you don't have any operators that work with dragons
+        2) use std::move()
+            trainer2 = std::move(trainer1);  // std::move returns an rvalue, so 
