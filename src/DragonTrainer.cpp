@@ -13,9 +13,10 @@ DragonTrainer::DragonTrainer(const DragonTrainer& toCopyFrom){
   myDragon = new Dragon;
   *myDragon = *(toCopyFrom.myDragon);
 }
+
 DragonTrainer& DragonTrainer::operator=(const DragonTrainer& toCopyFrom){
 
-  if(this != toCopyFrom){
+  if(this != &toCopyFrom){
 	delete myDragon;
 	*myDragon = *(toCopyFrom.myDragon);
 	name = toCopyFrom.name;

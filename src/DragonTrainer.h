@@ -12,5 +12,5 @@ class DragonTrainer{
 	~DragonTrainer();
     DragonTrainer(const DragonTrainer& toCopyFrom);
     DragonTrainer& operator=(const DragonTrainer& toCopyFrom);
-
+    DragonTrainer& operator=(const DragonTrainer&& toMoveFrom);
 };
