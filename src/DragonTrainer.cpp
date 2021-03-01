@@ -4,8 +4,8 @@
 #include <iostream>
 using namespace std;
 
-DragonTrainer::DragonTrainer() {
-  
+DragonTrainer::DragonTrainer():name("None"), myDragon(nullptr) {
+
 }
 
 DragonTrainer::DragonTrainer(const DragonTrainer& toCopyFrom){
@@ -15,8 +15,11 @@ DragonTrainer::DragonTrainer(const DragonTrainer& toCopyFrom){
 }
 DragonTrainer& DragonTrainer::operator=(const DragonTrainer& toCopyFrom){
 
-  *myDragon = *(toCopyFrom.myDragon);
-  name = toCopyFrom.name;
+  if(this != toCopyFrom){
+	delete myDragon;
+	*myDragon = *(toCopyFrom.myDragon);
+	name = toCopyFrom.name;
+  }
 
   return *this;
 }
